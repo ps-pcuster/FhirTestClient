@@ -15088,11 +15088,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pcuster\\Documents\\Repos\\FhirTest\\FhirTest.csproj",
+      "projectUniqueName": "C:\\Users\\pcuster\\Documents\\Repos\\FhirTestClient\\FhirTest.csproj",
       "projectName": "FhirTest",
-      "projectPath": "C:\\Users\\pcuster\\Documents\\Repos\\FhirTest\\FhirTest.csproj",
+      "projectPath": "C:\\Users\\pcuster\\Documents\\Repos\\FhirTestClient\\FhirTest.csproj",
       "packagesPath": "C:\\Users\\pcuster\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pcuster\\Documents\\Repos\\FhirTest\\obj\\",
+      "outputPath": "C:\\Users\\pcuster\\Documents\\Repos\\FhirTestClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
