@@ -1,0 +1,14 @@
+C:\Users\pcuster\Documents\Repos\FhirTest\bin\Debug\netcoreapp2.1\FhirTest.deps.json
+C:\Users\pcuster\Documents\Repos\FhirTest\bin\Debug\netcoreapp2.1\FhirTest.runtimeconfig.json
+C:\Users\pcuster\Documents\Repos\FhirTest\bin\Debug\netcoreapp2.1\FhirTest.runtimeconfig.dev.json
+c:\Users\pcuster\Documents\Repos\FhirTest\bin\Debug\netcoreapp2.1\FhirTest.dll
+c:\Users\pcuster\Documents\Repos\FhirTest\bin\Debug\netcoreapp2.1\FhirTest.pdb
+c:\Users\pcuster\Documents\Repos\FhirTest\obj\Debug\netcoreapp2.1\FhirTest.csprojAssemblyReference.cache
+c:\Users\pcuster\Documents\Repos\FhirTest\obj\Debug\netcoreapp2.1\FhirTest.csproj.CoreCompileInputs.cache
+c:\Users\pcuster\Documents\Repos\FhirTest\obj\Debug\netcoreapp2.1\FhirTest.RazorAssemblyInfo.cache
+c:\Users\pcuster\Documents\Repos\FhirTest\obj\Debug\netcoreapp2.1\FhirTest.RazorAssemblyInfo.cs
+c:\Users\pcuster\Documents\Repos\FhirTest\obj\Debug\netcoreapp2.1\FhirTest.AssemblyInfoInputs.cache
+c:\Users\pcuster\Documents\Repos\FhirTest\obj\Debug\netcoreapp2.1\FhirTest.AssemblyInfo.cs
+c:\Users\pcuster\Documents\Repos\FhirTest\obj\Debug\netcoreapp2.1\FhirTest.RazorTargetAssemblyInfo.cache
+c:\Users\pcuster\Documents\Repos\FhirTest\obj\Debug\netcoreapp2.1\FhirTest.dll
+c:\Users\pcuster\Documents\Repos\FhirTest\obj\Debug\netcoreapp2.1\FhirTest.pdb
