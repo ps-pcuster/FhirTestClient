@@ -3,14 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="CRISP.Utility.MicroserviceUtils" />
+    <PackageReference Include="CRISP.Utility.MicroserviceUtils" Version="2.1.1" />
     <PackageReference Include="Hl7.Fhir.R4" Version="1.2.1" />
     <PackageReference Include="OSHIE.Models" Version="1.2.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />

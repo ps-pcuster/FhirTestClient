@@ -39,6 +39,7 @@ namespace FhirTest
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseTelemetry();
             app.UseMvc();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
