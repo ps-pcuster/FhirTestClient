@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using CRISP;
 using CRISP.Providers;
+using FhirTestClient.Clients;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Rest;
 using Hl7.Fhir.Serialization;
@@ -49,54 +50,15 @@ namespace FhirTest
             EventHandler<AfterResponseEventArgs> onAfter = null
         )
         {
-            // setup TLS and SSL (moved to static constructor)
-            ServicePointManager.ServerCertificateValidationCallback =
-                (message, cert, chain, errors) => (errors == System.Net.Security.SslPolicyErrors.None) || reIsASEEndpoint.IsMatch(_endpoint);
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
             // use using(s) to handle disposing of objects. Needs more research.
-            using (var op = _client.StartOperation<DependencyTelemetry>("Dependency Name"))
-            using (FhirClient fhirClient =
-                new FhirClient(_endpoint)
+            using (ICrispFhirClient fhirClient =
+                new ICrispFhirClient(_endpoint)
                 {
                     PreferredFormat = ResourceFormat.Json,
-                    UseFormatParam = true
+                    UseFormatParam = true,
+                    _certificate = _certificate
                 })
             {
-                var dep = op.Telemetry;
-                dep.SetLogLocation(); // location is not really the most accurate metric but has been helpful before
-                dep.Type = "GET"; // type will always be a get
-
-                // request ID is used for linking logging in dependencies to this call
-                var requestId = RandomID(15);
-                dep.Id = requestId;
-
-                // stopwatch for logging duration.
-                Stopwatch sw = new Stopwatch();
-
-                // add dependency logging, blob logging, etc.
-                fhirClient.OnBeforeRequest += delegate(object sender, BeforeRequestEventArgs e)
-                {
-                    // add client information and "helpful" headers
-                    e.RawRequest.ClientCertificates.Add(_certificate);
-                    e.RawRequest.Timeout = _timeout;
-                    e.RawRequest.Headers.SetLinkingHeaders(requestId, RandomID(12));
-                    sw.Start();
-                };
-
-                fhirClient.OnAfterResponse += delegate(object sender, AfterResponseEventArgs e)
-                {
-                    sw.Stop();
-
-                    // log generic response inforation
-                    dep.Duration = sw.Elapsed;
-                    dep.ResultCode = e.RawResponse.StatusCode.ToString();
-                    dep.Success = e.RawResponse.StatusCode.IsSuccessful();
-
-                    // ToDo: log response to blob storage
-                };
-
-                // add user defined before and after actions
                 if (onBefore != null) fhirClient.OnBeforeRequest += onBefore;
                 if (onAfter != null) fhirClient.OnAfterResponse += onAfter;
 
